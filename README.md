@@ -14,3 +14,6 @@ Planted on purpose:
 | `app/reports.py` `archive` | real | shell command built from a request parameter |
 | `app/cache.py` `cache_key` | false positive | MD5 as a cache key, not for security |
 | `app/cache.py` `app.run(debug=True)` | real | Flask debug mode |
+| `app/profile.py` `greet` | real | reflected XSS: a request parameter returned in HTML unescaped |
+| `app/profile.py` `leave` | real | open redirect to any `next` URL |
+| `app/profile.py` `go` | false positive, if flagged | the target comes from a fixed allowlist |
