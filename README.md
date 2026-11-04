@@ -17,3 +17,6 @@ Planted on purpose:
 | `app/profile.py` `greet` | real | reflected XSS: a request parameter returned in HTML unescaped |
 | `app/profile.py` `leave` | real | open redirect to any `next` URL |
 | `app/profile.py` `go` | false positive, if flagged | the target comes from a fixed allowlist |
+| `app/files.py` `fetch` | real | SSRF: the server fetches any URL a request names |
+| `app/files.py` `open_file` | real | path traversal through string concatenation |
+| `app/files.py` `thumb` | false positive, if flagged | `os.path.basename` strips every directory part |
