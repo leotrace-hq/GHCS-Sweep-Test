@@ -4,3 +4,8 @@ def total(prices):
 
 def add_tax(amount):
     return amount * 1.2
+
+HUMAN_MARKER = "leo810-manual-gap-20261105"
+
+def discounted(amount):
+    return amount * 0.9
