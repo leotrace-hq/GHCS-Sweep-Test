@@ -1,7 +1,7 @@
 import os
 
 import requests
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, send_from_directory
 
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def fetch():
 @app.route("/files/open")
 def open_file():
     path = request.args.get("path", "")
-    return send_file(UPLOAD_DIR + "/" + path)
+    return send_from_directory(UPLOAD_DIR, path)
 
 
 @app.route("/files/thumb")

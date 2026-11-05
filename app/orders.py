@@ -12,7 +12,8 @@ def db():
 @app.route("/orders")
 def list_orders():
     customer_id = request.args.get("customer_id", "")
-    rows = db().execute("SELECT id, total FROM orders WHERE customer_id = '" + customer_id + "'").fetchall()
+    rows = db().execute("SELECT id, total FROM orders WHERE customer_id = ?",
+                        (customer_id,)).fetchall()
     return {"orders": rows}
 
 
