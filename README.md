@@ -20,3 +20,5 @@ Planted on purpose:
 | `app/files.py` `fetch` | real | SSRF: the server fetches any URL a request names |
 | `app/files.py` `open_file` | real | path traversal through string concatenation |
 | `app/files.py` `thumb` | false positive, if flagged | `os.path.basename` strips every directory part |
+
+LEO-808 attestation test branch.
